@@ -1,6 +1,7 @@
 package org.fcap.example.cxfendpointtest;
 
 import javax.jws.WebMethod;
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
 /**
@@ -10,5 +11,5 @@ import javax.jws.WebService;
 public interface IHelloWorldPortType {
 
 	@WebMethod
-	String sayHello(String name);
+	String sayHello(@WebParam(name = "name") String name);
 }

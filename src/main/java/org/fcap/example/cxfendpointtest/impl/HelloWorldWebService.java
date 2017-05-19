@@ -9,7 +9,7 @@ public class HelloWorldWebService implements IHelloWorldPortType {
 
 	@Override
 	public String sayHello(String name) {
-		System.out.println("name = " + name);
+		System.out.println("Said hello to ... " + name);
 
 		return "Hello " + name;
 	}
