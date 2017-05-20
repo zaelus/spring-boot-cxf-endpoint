@@ -1,6 +1,7 @@
 package org.fcap.example.cxfendpointtest.client;
 
 import org.fcap.example.cxfendpointtest.IHelloWorldPortType;
+import org.fcap.example.cxfendpointtest.model.Person;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,19 @@ public class HelloWorldClient {
 
 		String greeting = helloWorldClientProxyBean
 				.sayHello(firstName);
+
+		LOGGER.info("Client received greeting=[{}]",
+				greeting);
+		return greeting;
+	}
+
+	public String sayHelloForPerson(Person person) {
+
+		LOGGER.info("Client sending person=[firstName:{}]",
+				person);
+
+		String greeting = helloWorldClientProxyBean
+				.sayHelloForPerson(person);
 
 		LOGGER.info("Client received greeting=[{}]",
 				greeting);

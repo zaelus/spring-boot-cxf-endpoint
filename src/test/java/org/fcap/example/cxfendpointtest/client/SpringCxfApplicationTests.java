@@ -1,5 +1,7 @@
 package org.fcap.example.cxfendpointtest.client;
 
+import org.fcap.example.cxfendpointtest.model.Address;
+import org.fcap.example.cxfendpointtest.model.Person;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +24,12 @@ public class SpringCxfApplicationTests {
 
 		assertThat(helloWorldClient.sayHello("John"))
 				.isEqualTo("Hello John");
+	}
+
+	@Test
+	public void testSayHelloForPerson() {
+
+		assertThat(helloWorldClient.sayHelloForPerson(new Person("Francesco", "Caporale", new Address("Roma", "Via Roma 12"))))
+				.isEqualTo("Hi Francesco Caporale, Roma Via Roma 12");
 	}
 }
