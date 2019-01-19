@@ -15,5 +15,6 @@ public interface IHelloWorldPortType {
 	@WebMethod
 	String sayHello(@WebParam(name = "name") String name);
 
+	@WebMethod
 	String sayHelloForPerson(@WebParam(name = "person") Person person);
 }

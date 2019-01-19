@@ -2,10 +2,12 @@ package org.fcap.example.cxfendpointtest.impl;
 
 import org.fcap.example.cxfendpointtest.IHelloWorldPortType;
 import org.fcap.example.cxfendpointtest.model.Person;
+import org.springframework.stereotype.Service;
 
 /**
  * Created by Zaphire on 20/05/2017.
  */
+@Service
 public class HelloWorldWebService implements IHelloWorldPortType {
 
 	@Override

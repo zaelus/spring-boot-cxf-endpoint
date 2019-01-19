@@ -3,6 +3,7 @@ package org.fcap.example.cxfendpointtest;
 import org.apache.cxf.Bus;
 import org.apache.cxf.bus.spring.SpringBus;
 import org.apache.cxf.transport.servlet.CXFServlet;
+import org.fcap.example.cxfendpointtest.aop.ValidateWSAspect;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -23,5 +24,10 @@ public class CxfEndpointTestApplication {
 	@Bean(name= Bus.DEFAULT_BUS_ID)
 	public SpringBus springBus() {
 		return new SpringBus();
+	}
+
+	@Bean
+	public ValidateWSAspect validateWSAspect(){
+		return new ValidateWSAspect();
 	}
 }
