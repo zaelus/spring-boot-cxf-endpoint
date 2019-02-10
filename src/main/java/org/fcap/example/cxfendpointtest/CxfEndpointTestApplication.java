@@ -13,6 +13,9 @@ import org.springframework.context.annotation.Bean;
 public class CxfEndpointTestApplication {
 
 	public static void main(String[] args) {
+
+//		System.setProperty("server.servlet.context.path", "/bootapp");
+
 		SpringApplication.run(CxfEndpointTestApplication.class, args);
 	}
 
